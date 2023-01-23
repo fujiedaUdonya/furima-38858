@@ -45,16 +45,17 @@
 
 | Column             | Type               | Options                        |
 |--------------------|--------------------|--------------------------------|
+| prefecture_id      | integer            | null: false                    |
 | post_code          | string             | null: false                    |
 | city               | string             | null: false                    |
 | house_number       | string             | null: false                    |
-| building_name      | string             | null: false                    |
+| other              | string             | null: false                    |
 | phone_number       | string             | null: false, unique: true      |
-| purchases          | references         | null: false,foreign_key: true  | 
+| purchase           | references         | null: false,foreign_key: true  | 
 
 ### Association
 
-- belongs_to :purchases
+- belongs_to :purchase
 
 
 ## purchases table
@@ -63,13 +64,12 @@
 |---------------------|------------|--------------------------------|
 | user                | references | null: false,foreign_key: true  | 
 | item                | references | null: false,foreign_key: true  | 
-| address             | references | null: false,foreign_key: true  | 
 
 
 ### Association
 
 - belongs_to :user
-- belongs_to :items
+- belongs_to :item
 - has_one    :address
 
 
