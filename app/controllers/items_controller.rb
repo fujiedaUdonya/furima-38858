@@ -1,8 +1,8 @@
 class ItemsController < ApplicationController
-  before_action :authenticate_user!, except: [:index, :show]
+  before_action :authenticate_user!, except: [:index]
   
   def index
-    @items =  Item.all
+    # @items =  Item.all
   end
 
   def new
@@ -19,7 +19,7 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @items = Item.find(params[:id])
+    # @items = Item.find(params[:id])
   end  
   
   private
