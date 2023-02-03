@@ -29,7 +29,9 @@ class ItemsController < ApplicationController
   def destroy
     if @items.destroy
       redirect_to root_path
-    end
+    else
+      render :show
+     end
   end
 
   def update
